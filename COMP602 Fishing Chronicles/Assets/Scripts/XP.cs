@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class XP : MonoBehaviour
@@ -10,6 +11,7 @@ public class XP : MonoBehaviour
     public int level = 1;
 
     public SliderScript slider;
+    public Text levelText;
 
     // Start is called before the first frame update
     void Start()
@@ -26,10 +28,15 @@ public class XP : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.X))
         {
-            getXP(10);
+            getXP(70);
         }
+        dispylayLevel(level);
     }
 
+    public void dispylayLevel(int level)
+    {
+        levelText.text = "Level: "+ level;
+    }
     public void getXP(int xp)
     {
         currentXP += xp;
@@ -37,10 +44,11 @@ public class XP : MonoBehaviour
 
         if(currentXP>= MaxXP)
         {
+            int Xpdiff = currentXP - MaxXP;
             level++;
             MaxXP = level * 100;
             slider.SetSliderMax(MaxXP);
-            currentXP = 0;
+            currentXP = Xpdiff;
             slider.SetSlider(currentXP);
         }
     }
