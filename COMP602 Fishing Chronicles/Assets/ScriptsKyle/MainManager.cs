@@ -8,8 +8,6 @@ public class MainManager : MonoBehaviour
     //currently this entire script does nothing but make an object in the DontDestroyOnLoad
     //thinking this will be used later for everyone to be able to keep certain data across areas.
     public static MainManager Instance;
-    public Object objects;
-    public Scene saveScene;
 
     private void Awake()
     {
