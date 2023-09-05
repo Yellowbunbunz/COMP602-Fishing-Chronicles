@@ -5,19 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Enter : MonoBehaviour
 {
-    public GameObject gameObject;
-
     void OnCollisionEnter(Collision collision)
     {
-       if (collision.collider.tag == "Door")
+        string[] safetags = { "Shop1", "SampleScene" };
+        for(int i = 0; safetags.Length > i; i++)
         {
-            SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetSceneByBuildIndex(1));
-            //SceneManager.LoadScene(1, LoadSceneMode.Single);
-            SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(1));
-        }
-        if (collision.collider.tag == "MainScene")
-        {
-            SceneManager.LoadScene(0);
+            if (collision.collider.tag == safetags[i])
+            {
+                SceneManager.LoadScene(collision.collider.tag);
+            }
+
         }
     }
 }
