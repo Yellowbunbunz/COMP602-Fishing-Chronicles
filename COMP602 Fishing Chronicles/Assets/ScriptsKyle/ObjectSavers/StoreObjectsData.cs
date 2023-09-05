@@ -12,6 +12,9 @@ public class StoreObjectsData : MonoBehaviour
     {
         //makes sure there isn't another instance of the same object however this is now causing an issue
         //as I can't have multiple objects using this one code, will need to find a solution
+        //APPENDAGE: Current solution is to add to an empty object holding multiple objects inside
+        //this is a temporary solution, I believe logically there must be a better way since I can't imagine
+        //holding 100+ objects to be the best solution
         if (_instance == null)
         {
             _instance = this;
