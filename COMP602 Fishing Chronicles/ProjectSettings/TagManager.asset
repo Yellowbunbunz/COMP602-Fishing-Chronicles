@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Shop1
   - SampleScene
+  - House
   layers:
   - Default
   - TransparentFX
