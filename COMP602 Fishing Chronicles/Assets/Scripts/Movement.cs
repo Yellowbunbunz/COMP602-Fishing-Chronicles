@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     public float speed = 10.0f;
     public float TurnSmooth = 0.1f;
     public Transform cam;
+    public Rigidbody rb;
 
     float turnSmoothVelocity;
 
@@ -28,6 +29,11 @@ public class Movement : MonoBehaviour
 
             Vector3 moveDir = Quaternion.Euler(0f, tagetAngle, 0f) * Vector3.forward;
             characterController.Move(moveDir.normalized * speed * Time.deltaTime);
+        }
+
+        if(Input.GetKey(KeyCode.Space))
+        {
+            rb.AddForce(0, speed * Time.deltaTime, 0);
         }
     }
 }
