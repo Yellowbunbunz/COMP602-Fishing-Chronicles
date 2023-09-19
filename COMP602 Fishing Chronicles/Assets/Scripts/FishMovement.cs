@@ -62,7 +62,7 @@ public class FishMovement : MonoBehaviour
         targetPosition.x = initialPosition.x + randX * direction.x;
         targetPosition.y = initialPosition.y + randY * direction.y;
     }
- 
+
 }
 
 

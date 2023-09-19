@@ -69,15 +69,6 @@ public class HookedFishMovement : MonoBehaviour
             }
         }
 
-         void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.CompareTag("Hook"))
-            {
-                isHooked = true;
-                Debug.Log("Hooked");
-            }
-        }
-
          void ReleaseFish()
         {
             // Release the fish.
@@ -97,6 +88,15 @@ public class HookedFishMovement : MonoBehaviour
             Destroy(gameObject);
             rod.enabled = true;
             fish.enabled = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Hook")
+        {
+            isHooked = true;
+            Debug.Log("Hooked");
         }
     }
 }
