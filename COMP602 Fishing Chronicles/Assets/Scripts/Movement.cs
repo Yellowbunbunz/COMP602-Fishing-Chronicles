@@ -1,36 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float speed = 10.0f;
-    public Rigidbody rb;
-    public float jumpSpot = 2;
-    public float jumpForce = 1000;
+    public CharacterController characterController;
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public float speed = 10.0f;
+    public float TurnSmooth = 0.1f;
+    public Transform cam;
+    public Rigidbody rb;
+
+    float turnSmoothVelocity;
+
+    private void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.W))
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+
+        if(direction.magnitude >= 0.1)
         {
-            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+            float tagetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, tagetAngle, ref turnSmoothVelocity, TurnSmooth);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+            Vector3 moveDir = Quaternion.Euler(0f, tagetAngle, 0f) * Vector3.forward;
+            characterController.Move(moveDir.normalized * speed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.S))
+
+        if(Input.GetKey(KeyCode.Space))
         {
-            transform.Translate(Vector3.back * speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(Vector3.left * speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(Vector3.right * speed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.Space) && jumpSpot <= 2)
-        {
-            rb.AddForce(0, jumpForce * Time.deltaTime, 0);
+            rb.AddForce(0, speed * Time.deltaTime, 0);
         }
     }
 }
