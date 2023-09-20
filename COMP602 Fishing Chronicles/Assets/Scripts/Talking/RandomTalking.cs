@@ -4,17 +4,43 @@ using UnityEngine;
 
 public class RandomTalking : MonoBehaviour
 {
-    private void OnCollisionExit(Collision collision)
-    {
-        Debug.Log("you've exited");
+    bool entrance = true;
+    static bool exit = true;
+    static bool met = false;
 
-    }
-    private void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
-        Debug.Log(collision.collider.tag);
-        if(collision.collider.tag == "Player")
+        //When a player enters it should make the npc say a "hello script"
+        if (collision.tag == "Player" && entrance)
         {
-            Debug.Log("Hello there stranger");
+            Invoke("firstSpeech", 1);
+            entrance = false;
         }
+        if(collision.tag == "Player" && met)
+        {
+
+        }
+    }
+
+    public void OnTriggerExit(Collider collision)
+    {
+        if (collision.tag == "Player" && exit)
+        {
+            Invoke("exitSpeech", 1);
+            exit = false;
+        }
+    }
+
+    private void firstSpeech()
+    {
+        exit = true;
+        Debug.Log("Welcome stranger");
+    }
+
+    private void exitSpeech()
+    {
+        met = true;
+        Debug.Log("Farewell Stranger");
+
     }
 }
