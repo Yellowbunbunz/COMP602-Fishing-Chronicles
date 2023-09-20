@@ -10,6 +10,7 @@ public class FishSpawner : MonoBehaviour
     public int maxFishCount = 10;
 
     public GameObject water; // Reference to the GameObject representing your water rectangle.
+    public GameObject parent;
 
     private int currentFishCount = 0;
 
@@ -24,14 +25,18 @@ public class FishSpawner : MonoBehaviour
         if (currentFishCount < maxFishCount)
         {
             // Calculate boundaries of the water rectangle.
-            Bounds waterBounds = water.GetComponent<SpriteRenderer>().bounds;
+            Collider2D waterBounds = water.GetComponent<BoxCollider2D>();
+
+            // Calculate boundaries of the water rectangle.
+            Vector2 waterBoundsMin = waterBounds.bounds.min;
+            Vector2 waterBoundsMax = waterBounds.bounds.max;
 
             // Generate random position within the water boundaries.
-            float randomX = Random.Range(waterBounds.min.x, waterBounds.max.x);
-            float randomY = Random.Range(waterBounds.min.y, waterBounds.max.y);
+            float randomX = Random.Range(waterBoundsMax.x, waterBoundsMin.x);
+            float randomY = Random.Range(waterBoundsMax.y, waterBoundsMin.y);
 
             Vector3 spawnPosition = new Vector3(randomX, randomY, 0);
-            GameObject newFish =  Instantiate(fishPrefab, spawnPosition, Quaternion.identity);
+            GameObject newFish =  Instantiate(fishPrefab, spawnPosition, Quaternion.identity, parent.transform);
             newFish.SetActive(true);
             currentFishCount++;
         }

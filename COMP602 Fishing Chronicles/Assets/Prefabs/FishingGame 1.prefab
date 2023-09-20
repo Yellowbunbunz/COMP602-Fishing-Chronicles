@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3312595145973450697}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2708, y: -0.1354, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.2708, y: -0.13540006, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 775c0b41abf5e0541adfdc175913130b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishspeed: 0.5
   rodForce: 10
   rod: {fileID: 2799631880359730504}
   fish: {fileID: 8842510133758789481}
@@ -184,7 +185,7 @@ Transform:
   m_GameObject: {fileID: 3484123503762945690}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.41503128, y: 0.68374974, z: -0.062377334}
+  m_LocalPosition: {x: 0.4150313, y: 0.6837497, z: -0.062377334}
   m_LocalScale: {x: 0.33333334, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -394,7 +395,7 @@ Transform:
   m_GameObject: {fileID: 3996552679706889565}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.0308, z: 0}
+  m_LocalPosition: {x: 0, y: -0.0308, z: 0}
   m_LocalScale: {x: 7.872481, y: 7.358063, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

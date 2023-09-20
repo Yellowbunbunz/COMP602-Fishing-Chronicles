@@ -8,28 +8,37 @@ public class HookedFishMovement : MonoBehaviour
     private bool isHooked = false;
     private float releaseTime = 10.0f; // Time in seconds before releasing if not pulled to the top.
     private float releaseTimer = 0.0f;
-    public float rodForce = 10;
-    public RodMovement rod;
+    public float fishspeed = 0.5f;
+    public float rodForce = 10f;
     public FishMovement fish;
     public FishSpawner fishSpawner;
     public GameObject water;
-    Bounds waterBounds;
+    private GameObject hook;
+    Collider2D waterBounds;
 
     // Update is called once per frame
     void FixedUpdate()
     {
+     
+
         if (isHooked)
         {
-            rod.enabled = false;
+      
             fish.enabled = false;
             // Fish is hooked, apply diagonal pull here.
-            // You can use transform.Translate or Rigidbody2D for movement.
-            // For simplicity, we'll move the fish diagonally downwards.
-            transform.Translate(Vector3.down * Time.deltaTime);
-            FightFish();
+           hook.transform.Translate(Vector3.down * Time.deltaTime * fishspeed);
+
+            //hooked fished movement
+            Vector3 hookPosition = hook.transform.position;
+            transform.position = Vector3.MoveTowards(transform.position, hookPosition, rodForce * Time.deltaTime);
+
             // Check if the fish has been pulled to the top.
-            waterBounds = water.GetComponent<SpriteRenderer>().bounds;
-            if (transform.position.y >= waterBounds.min.y)
+            Collider2D waterBounds = water.GetComponent<BoxCollider2D>();
+
+            // Calculate boundaries of the water rectangle.
+            Vector2 waterBoundsMax = waterBounds.bounds.max;
+
+            if (hook.transform.position.y >= waterBoundsMax.y)
             {
                 // Fish is at the top, release it.
                 DeleteFish();
@@ -47,34 +56,12 @@ public class HookedFishMovement : MonoBehaviour
             }
         }
 
-        void FightFish()
-        {
-            if (Input.GetKey(KeyCode.A))
-            {
-                transform.Translate(Vector2.left * rodForce * Time.deltaTime);
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-
-                transform.Translate(Vector2.right * rodForce * Time.deltaTime);
-            }
-            if (Input.GetKey(KeyCode.W))
-            {
-                transform.Translate(Vector2.up * rodForce * Time.deltaTime);
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-
-                transform.Translate(Vector2.down * rodForce* Time.deltaTime);
-            }
-        }
-
-         void ReleaseFish()
+        void ReleaseFish()
         {
             // Release the fish.
             isHooked = false;
-            rod.enabled = true;
-            fish.enabled = true;
+            fish.enabled = true; 
+            hook = null;
             releaseTimer = 0.0f;
         }
 
@@ -86,8 +73,8 @@ public class HookedFishMovement : MonoBehaviour
                 fishSpawner.DecreaseFish();
             }
             Destroy(gameObject);
-            rod.enabled = true;
             fish.enabled = true;
+            hook = null;
         }
     }
 
@@ -96,7 +83,8 @@ public class HookedFishMovement : MonoBehaviour
         if (other.tag == "Hook")
         {
             isHooked = true;
-            Debug.Log("Hooked");
+            hook = other.gameObject;
+            
         }
     }
 }

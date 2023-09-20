@@ -51,16 +51,22 @@ public class FishMovement : MonoBehaviour
     {
         // Generate a random angle.
         float randomAngle = Random.Range(-maxDirectionChangeAngle, maxDirectionChangeAngle);
-        waterBounds = water.GetComponent<SpriteRenderer>().bounds;
+        Collider2D waterBounds = water.GetComponent<BoxCollider2D>();
 
-        float randX = Random.Range(waterBounds.min.x + 1, waterBounds.max.x - 1);
-        float randY = Random.Range(waterBounds.min.y + 1, waterBounds.max.y - 1);
+        // Calculate boundaries of the water rectangle.
+        Vector2 waterBoundsMin = waterBounds.bounds.min;
+        Vector2 waterBoundsMax = waterBounds.bounds.max;
 
+        // Generate random position within the water boundaries.
+       
+        float randomX = Random.Range(waterBoundsMin.x, waterBoundsMax.x);
+        float randomY = Random.Range(waterBoundsMin.y, waterBoundsMax.y);
+        
         // Calculate the new target position based on the random angle.
         Quaternion rotation = Quaternion.Euler(0, 0, randomAngle);
         Vector3 direction = rotation * Vector3.right;
-        targetPosition.x = initialPosition.x + randX * direction.x;
-        targetPosition.y = initialPosition.y + randY * direction.y;
+        targetPosition.x = Mathf.Clamp(initialPosition.x + randomX * direction.x, waterBoundsMin.x, waterBoundsMax.x);
+        targetPosition.y = Mathf.Clamp(initialPosition.y + randomY * direction.y, waterBoundsMin.y, waterBoundsMax.y);
     }
 
 }
