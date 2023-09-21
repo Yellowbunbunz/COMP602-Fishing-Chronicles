@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hook
+  - Furniture
+  - Shop1
+  - House
+  - MainWorld
+  - MainHallCam
   layers:
   - Default
   - TransparentFX
