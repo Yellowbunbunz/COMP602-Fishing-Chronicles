@@ -13,7 +13,6 @@ public class Enter : MonoBehaviour
         string[] safetags = { "Shop1", "MainWorld", "House" };
         for(int i = 0; safetags.Length > i; i++)
         {
-            Debug.Log(collision.collider.tag);
             if (collision.collider.tag == safetags[i])
             {
                 SceneManager.LoadScene(collision.collider.tag);//loads the scene

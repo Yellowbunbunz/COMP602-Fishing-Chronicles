@@ -9,6 +9,7 @@ TagManager:
   - Shop1
   - House
   - MainWorld
+  - MainHallCam
   layers:
   - Default
   - TransparentFX
