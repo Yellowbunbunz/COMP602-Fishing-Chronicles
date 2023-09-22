@@ -479,6 +479,7 @@ GameObject:
   - component: {fileID: 339496852}
   - component: {fileID: 339496851}
   - component: {fileID: 339496850}
+  - component: {fileID: 339496853}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -553,13 +554,47 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 339496848}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18463482, y: -0.00075224304, z: 0.00014131998, w: 0.9828069}
-  m_LocalPosition: {x: 318, y: 14.973637, z: 205.6565}
+  m_LocalRotation: {x: 0.1846348, y: -0.00082944427, z: 0.00015582336, w: 0.98280686}
+  m_LocalPosition: {x: 315.23, y: 14.973637, z: 205.1865}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 35, y: 0, z: 0}
+--- !u!114 &339496853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339496848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &376125723
 GameObject:
   m_ObjectHideFlags: 0
@@ -3214,19 +3249,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2461227224897664415, guid: 19bbfe3f2de937341b08cf15591cce9c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9837343
+      value: 0.9837342
       objectReference: {fileID: 0}
     - target: {fileID: 2461227224897664415, guid: 19bbfe3f2de937341b08cf15591cce9c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.1796266
+      value: 0.17962658
       objectReference: {fileID: 0}
     - target: {fileID: 2461227224897664415, guid: 19bbfe3f2de937341b08cf15591cce9c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.001045768
+      value: -0.0011530931
       objectReference: {fileID: 0}
     - target: {fileID: 2461227224897664415, guid: 19bbfe3f2de937341b08cf15591cce9c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00019095375
+      value: 0.00021055096
       objectReference: {fileID: 0}
     - target: {fileID: 3412667940805960065, guid: 19bbfe3f2de937341b08cf15591cce9c, type: 3}
       propertyPath: m_Name
@@ -3238,7 +3273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5855079303066148624, guid: 19bbfe3f2de937341b08cf15591cce9c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 318
+      value: 315.23
       objectReference: {fileID: 0}
     - target: {fileID: 5855079303066148624, guid: 19bbfe3f2de937341b08cf15591cce9c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3246,7 +3281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5855079303066148624, guid: 19bbfe3f2de937341b08cf15591cce9c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 205.6565
+      value: 205.1865
       objectReference: {fileID: 0}
     - target: {fileID: 5855079303066148624, guid: 19bbfe3f2de937341b08cf15591cce9c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3304,9 +3339,7 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.0000000031116503
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7327910358036111694, guid: 19bbfe3f2de937341b08cf15591cce9c, type: 3}
-    - {fileID: 8453540874444746797, guid: 19bbfe3f2de937341b08cf15591cce9c, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
