@@ -16,10 +16,22 @@ public class BedroomCamera : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Ecamera.transform.position = Bedroom;
+        Invoke("enter", 3);
     }
     private void OnTriggerExit(Collider other)
     {
+        Invoke("exit", 3);
+    }
+
+    void enter()
+    {
+        Ecamera.transform.position = Bedroom;
+
+    }
+
+    void exit()
+    {
         Ecamera.transform.position = MainHallPos;
+
     }
 }

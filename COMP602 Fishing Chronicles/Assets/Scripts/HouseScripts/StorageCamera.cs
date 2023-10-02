@@ -16,10 +16,23 @@ public class StorageCamera : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Ecamera.transform.position = Storage;
+        Invoke("enter", 3);
     }
     private void OnTriggerExit(Collider other)
     {
-        Ecamera.transform.position = MainHallPos;
+        Invoke("exit", 3);
     }
+
+    void enter()
+    {
+        Ecamera.transform.position = Storage;
+
+    }
+
+    void exit()
+    {
+        Ecamera.transform.position = MainHallPos;
+
+    }
+
 }

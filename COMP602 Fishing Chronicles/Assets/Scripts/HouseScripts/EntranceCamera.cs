@@ -18,10 +18,20 @@ public class EntranceCamera : MonoBehaviour
     //when player spawns in or walks into this room it will now move the camera to the appropriate locations.
     private void OnTriggerEnter(Collider other)
     {
-        Ecamera.transform.position = Entrance;
+        Invoke("enter", 3);
     }
     private void OnTriggerExit(Collider other)
     {
-        Ecamera.transform.position = MainHallPos;
+        Invoke("exit", 3);
     }
+    void enter()
+    {
+        Ecamera.transform.position = Entrance;
+    }
+    void exit()
+    {
+        Ecamera.transform.position = MainHallPos;
+
+    }
+
 }
