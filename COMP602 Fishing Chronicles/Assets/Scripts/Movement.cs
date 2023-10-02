@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     public float speed = 10.0f;
     public float TurnSmooth = 0.1f;
     public Transform cam;
-    public Rigidbody rb;
+  //  public Rigidbody rb;
 
     float turnSmoothVelocity;
 
@@ -31,9 +31,14 @@ public class Movement : MonoBehaviour
             characterController.Move(moveDir.normalized * speed * Time.deltaTime);
         }
 
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(0, speed * Time.deltaTime, 0);
-        }
+            Debug.Log("up pressed");
+            //            rb.AddForce(0, speed * Time.deltaTime, 0);
+            float tagetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, tagetAngle, ref turnSmoothVelocity, TurnSmooth);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            Vector3 moveDir = Quaternion.Euler(0f, tagetAngle, 0f) * Vector3.;
+          }
     }
 }

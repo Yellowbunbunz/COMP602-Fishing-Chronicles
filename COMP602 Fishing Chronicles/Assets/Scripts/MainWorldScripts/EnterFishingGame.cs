@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class EnterFishingGame : MonoBehaviour
 {
     bool fish = false;
+
+    private void Start()
+    {
+        Debug.Log(fish);
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.tag == "Player")
