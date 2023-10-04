@@ -11,6 +11,9 @@ public class MainWorldSaver : MonoBehaviour
     private static MainWorldSaver _instance;
     private string startScene;
 
+    public static MainWorldSaver fishInstance;
+    public int fishCount = 0;
+
     private void Awake()
     {
         if (_instance == null)

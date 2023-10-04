@@ -40,8 +40,14 @@ public class HookedFishMovement : MonoBehaviour
 
             if (hook.transform.position.y >= waterBoundsMax.y)
             {
+                
+
                 // Fish is at the top, release it.
                 DeleteFish();
+
+                MainWorldSaver.fishInstance.fishCount++;
+
+                UnityEngine.SceneManagement.SceneManager.LoadScene("MainWorld");
             }
             else
             {
