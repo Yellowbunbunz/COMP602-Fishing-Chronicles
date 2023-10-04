@@ -27,8 +27,6 @@ public class CameraManager : MonoBehaviour
 
     public float minPivotAngle = -35;//lock bot
     public float maxPivotAngle = 35;//lock top
-    public float minLookAngle = -180;//lock left
-    public float maxLookAngle = 180;//lock right
 
     public float cameraFollowSpeed = 0.2f;
     public float cameraLookSpeed = 2f;//how fast it turns up and down
@@ -59,9 +57,7 @@ public class CameraManager : MonoBehaviour
         pivotAngle = pivotAngle - (inputManager.cameraInputY * cameraPivotSpeed);
 
         //locking to prevent infinte turns
-//        lookAngle = Mathf.Clamp(lookAngle, minLookAngle, maxLookAngle);
         pivotAngle = Mathf.Clamp(pivotAngle, minPivotAngle, maxPivotAngle);
-
 
         //left right control
         rotation = Vector3.zero;
