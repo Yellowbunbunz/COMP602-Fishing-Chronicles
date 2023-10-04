@@ -10,6 +10,7 @@ TagManager:
   - House
   - MainWorld
   - MainHallCam
+  - Fish
   layers:
   - Default
   - TransparentFX
