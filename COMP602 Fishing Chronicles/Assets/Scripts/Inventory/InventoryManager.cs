@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,9 +12,33 @@ public class InventoryManager : MonoBehaviour
     public Transform ItemContent;
     public GameObject InventoryItem;
 
+    public GameObject InventoryUI;
+
+    private bool isInventoryOpen = false;
+
+    private void Start()
+    {
+        CloseInventory();
+    }
+
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (isInventoryOpen)
+            {
+                CloseInventory();
+            }
+            else
+            {
+                OpenInventory();
+            }
+        }
     }
 
     public void Add(Item item)
@@ -42,5 +67,18 @@ public class InventoryManager : MonoBehaviour
             itemName.text = item.itemName;
             itemIcon.sprite = item.icon;
         }
+    }
+
+    void OpenInventory()
+    {
+        InventoryUI.SetActive(true);
+        isInventoryOpen = true;
+        ListItems();
+    }
+
+    void CloseInventory()
+    {
+        InventoryUI.SetActive(false);
+        isInventoryOpen = false;
     }
 }

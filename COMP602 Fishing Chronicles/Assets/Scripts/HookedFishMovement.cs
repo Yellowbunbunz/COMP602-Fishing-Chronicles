@@ -45,9 +45,7 @@ public class HookedFishMovement : MonoBehaviour
                 // Fish is at the top, release it.
                 DeleteFish();
 
-                MainWorldSaver.fishInstance.fishCount++;
-
-                UnityEngine.SceneManagement.SceneManager.LoadScene("MainWorld");
+                ItemPickup.Instance.Pickup();
             }
             else
             {

@@ -2803,6 +2803,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b9c552e0612cef439627338b5ceac6c, type: 3}
+--- !u!1 &1422916956 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1882800238486889092, guid: efd482f64a4886e43b62b67640dcd679, type: 3}
+  m_PrefabInstance: {fileID: 7328860837965981346}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1511883452 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 508822170478766732, guid: 7b9c552e0612cef439627338b5ceac6c, type: 3}
@@ -3377,11 +3382,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8737747055929338828, guid: 19bbfe3f2de937341b08cf15591cce9c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000001898399
+      value: 0.000000018983993
       objectReference: {fileID: 0}
     - target: {fileID: 8737747055929338828, guid: 19bbfe3f2de937341b08cf15591cce9c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000031116503
+      value: -0.000000003111651
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4362,6 +4367,10 @@ PrefabInstance:
       value: InventoryManager
       objectReference: {fileID: 0}
     - target: {fileID: 8995134047178149728, guid: e1bf3e1230c7b3445ba6dd43165a8f6d, type: 3}
+      propertyPath: InventoryUI
+      value: 
+      objectReference: {fileID: 1422916956}
+    - target: {fileID: 8995134047178149728, guid: e1bf3e1230c7b3445ba6dd43165a8f6d, type: 3}
       propertyPath: ItemContent
       value: 
       objectReference: {fileID: 452410141}
@@ -4467,12 +4476,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1882800238486889092, guid: efd482f64a4886e43b62b67640dcd679, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2381854107494850680, guid: efd482f64a4886e43b62b67640dcd679, type: 3}
+      propertyPath: m_Name
+      value: InventoryItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2381854107494850680, guid: efd482f64a4886e43b62b67640dcd679, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2606058907653540357, guid: efd482f64a4886e43b62b67640dcd679, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1304090222}
+    - target: {fileID: 2892596861599884017, guid: efd482f64a4886e43b62b67640dcd679, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8064969477298102708, guid: efd482f64a4886e43b62b67640dcd679, type: 3}
+    - {fileID: 977382294892505153, guid: efd482f64a4886e43b62b67640dcd679, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd482f64a4886e43b62b67640dcd679, type: 3}
