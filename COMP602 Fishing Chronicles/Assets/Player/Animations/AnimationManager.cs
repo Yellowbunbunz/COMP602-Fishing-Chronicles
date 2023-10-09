@@ -19,6 +19,12 @@ public class AnimationManager : MonoBehaviour
         vertical = Animator.StringToHash("Vertical");
     }
 
+    public void PlayTargetAnimation(string targetAnimation, bool isInteracting)
+    {
+        animator.SetBool("isInteracting", isInteracting);
+        animator.CrossFade(targetAnimation, 0.2f);//changes to targeted animation
+    }
+
     public void UpdateAnimatorValues(float horizontalMovement, float verticalMovement)
     {
         //animationSnapping
