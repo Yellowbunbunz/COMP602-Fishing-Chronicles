@@ -33,12 +33,10 @@ public class AnimationManager : MonoBehaviour
         #region Snapped Horizontal
         if (horizontalMovement > 0 && horizontalMovement < 0.55f)
         {
-            Debug.Log("walking");
             snappedHorizontal = 0.5f;
         }
         else if(horizontalMovement > 0.55f)
         {
-            Debug.Log("running");
             snappedHorizontal = 1;
         }
         else if (horizontalMovement < 0 && horizontalMovement > -0.55f)
@@ -57,12 +55,10 @@ public class AnimationManager : MonoBehaviour
         #region Snapped Vertical
         if (verticalMovement > 0 && verticalMovement < 0.55f)
         {
-            Debug.Log("walking 2");
             snappedVertical = 0.5f;
         }
         else if (verticalMovement > 0.55f)
         {
-            Debug.Log("running");
             snappedVertical = 1;
         }
         else if (verticalMovement < 0 && verticalMovement > -0.55f)

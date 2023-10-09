@@ -16,6 +16,7 @@ public class PlayerLocomotion : MonoBehaviour
     public bool isSprinting;
     public bool isWalking;
     public bool isGrounded;
+    public bool isJumping;
 
     [Header("Falling")]
     public float inAirTimer;
@@ -25,10 +26,14 @@ public class PlayerLocomotion : MonoBehaviour
     public LayerMask groundLayer;
 
     [Header("Movement Speeds")]
-    public float walkingSpeed = 1.5f;
-    public float runningSpeed = 7f;
-    public float sprintingSpeed = 15f;
+    public float walkingSpeed = 2f;
+    public float runningSpeed = 4f;
+    public float sprintingSpeed = 6f;
     public float rotationSpeed = 15f;
+
+    [Header("Jumping Speeds")]
+    public float jumpHeight = 1;
+    public float gravityIntensity = -20;
 
     private void Awake()
     {
@@ -42,6 +47,8 @@ public class PlayerLocomotion : MonoBehaviour
     //moves player but will keep straight
     private void HandleMovement()
     {
+        if (isJumping)
+            return;
         //sees what direction camera is facing and moves player based on that
         moveDirection = cameraObject.forward * inputManager.verticalInput;
         moveDirection = moveDirection + cameraObject.right * inputManager.horizontalInput;
@@ -71,6 +78,8 @@ public class PlayerLocomotion : MonoBehaviour
     //moves direction player is facing
     private void HandleRotation()
     {
+        if (isJumping)
+            return;
         //the direction the player will be facing and sets everything to 0 as script is called
         Vector3 targetDirecton = Vector3.zero;
 
@@ -100,7 +109,7 @@ public class PlayerLocomotion : MonoBehaviour
         Vector3 rayCastOrigin = transform.position;
         rayCastOrigin.y = rayCastOrigin.y + rayCastHeightOffSet;
 
-        if(!isGrounded)
+        if(!isGrounded && !isJumping)
         {
             if(!playerManager.isInteracting)
             {
@@ -125,6 +134,20 @@ public class PlayerLocomotion : MonoBehaviour
         else
         {
             isGrounded = false;
+        }
+    }
+
+    public void HandleJumping()
+    {
+        if(isGrounded)
+        {
+            animatorManager.animator.SetBool("isJumping", true);
+            animatorManager.PlayTargetAnimation("Jump", false);
+
+            float jumpingVel = Mathf.Sqrt(-2 * gravityIntensity * jumpHeight);
+            Vector3 playerVel = moveDirection;
+            playerVel.y = jumpingVel;
+            playerRigidbody.velocity = playerVel;
         }
     }
 

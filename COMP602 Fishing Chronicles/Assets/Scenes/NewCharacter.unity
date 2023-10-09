@@ -334,7 +334,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 6bd4c3260950e3e41921666a76575280, type: 2}
     - target: {fileID: 919132149155446097, guid: 7f85b04c1e56f944e97214ddc56fe9f7, type: 3}
       propertyPath: m_Name
-      value: LowPolyMan
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7f85b04c1e56f944e97214ddc56fe9f7, type: 3}
       propertyPath: m_TagString
@@ -694,8 +694,9 @@ MonoBehaviour:
   isSprinting: 0
   isWalking: 0
   isGrounded: 1
+  isJumping: 0
   inAirTimer: 0
-  leapingVel: 50
+  leapingVel: 100
   fallingVel: 33
   rayCastHeightOffSet: 0.5
   groundLayer:
@@ -705,6 +706,8 @@ MonoBehaviour:
   runningSpeed: 4
   sprintingSpeed: 6
   rotationSpeed: 15
+  jumpHeight: 3
+  gravityIntensity: -15
 --- !u!114 &1459705536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,6 +765,7 @@ MonoBehaviour:
   horizontalInput: 0
   shift_Input: 0
   ctrl_Input: 0
+  jump_Input: 0
 --- !u!114 &1459705540
 MonoBehaviour:
   m_ObjectHideFlags: 0

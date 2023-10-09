@@ -15,12 +15,13 @@ public class InputManager : MonoBehaviour
     public float cameraInputY;
 
     public float moveAmount;
-    //for jump
     public float verticalInput;
     public float horizontalInput;
 
     public bool shift_Input;
     public bool ctrl_Input;
+    public bool jump_Input;
+
 
     public void Awake()
     {
@@ -44,6 +45,9 @@ public class InputManager : MonoBehaviour
             playerControls.PlayerActions.Sprinting.canceled += i => shift_Input = false;
             playerControls.PlayerActions.Walking.performed += i => ctrl_Input = true;
             playerControls.PlayerActions.Walking.canceled += i => ctrl_Input = false;
+
+            //jump control
+            playerControls.PlayerActions.Jumping.performed += i => jump_Input = true;
         }
 
         playerControls.Enable();
@@ -88,11 +92,21 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    private void HandleJumpingInput()
+    {
+        if(jump_Input)
+        {
+            jump_Input = false;
+            playerLocomotion.HandleJumping();
+        }
+    }
+
     //calls all movementinputs
     public void HandleAllInputs()
     {
         HandleMovementInput();
         HandleSpeedInput();
+        HandleJumpingInput();
         //later be used to basically be able to call all other HandlexyzInput
     }
 }
