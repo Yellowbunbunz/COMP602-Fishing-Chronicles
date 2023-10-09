@@ -10,7 +10,13 @@ public class PlayerLocomotion : MonoBehaviour
     Transform cameraObject;
     Rigidbody playerRigidbody;
 
-    public float movementSpeed = 7f;
+    public bool isSprinting;
+    public bool isWalking;
+
+    [Header("Movement Speeds")]
+    public float walkingSpeed = 1.5f;
+    public float runningSpeed = 7f;
+    public float sprintingSpeed = 15f;
     public float rotationSpeed = 15f;
 
     private void Awake()
@@ -18,12 +24,6 @@ public class PlayerLocomotion : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         playerRigidbody = GetComponent<Rigidbody>();
         cameraObject = Camera.main.transform;
-    }
-
-    public void HandleAllMovement()
-    {
-        HandleMovement();
-        HandleRotation();
     }
 
     //moves player but will keep straight
@@ -36,7 +36,19 @@ public class PlayerLocomotion : MonoBehaviour
         moveDirection.Normalize();
         //stops you flying
         moveDirection.y = 0;
-        moveDirection = moveDirection * movementSpeed;
+
+        if(isSprinting)
+        {
+            moveDirection = moveDirection * sprintingSpeed;
+        }
+        if (isWalking)
+        {
+            moveDirection = moveDirection * walkingSpeed;
+        }
+        else
+        {
+            moveDirection = moveDirection * runningSpeed;
+        }
 
         Vector3 movementVelocity = moveDirection;
         //this should move the player
@@ -67,5 +79,11 @@ public class PlayerLocomotion : MonoBehaviour
         Quaternion playerRotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
         transform.rotation = playerRotation;
+    }
+
+    public void HandleAllMovement()
+    {
+        HandleMovement();
+        HandleRotation();
     }
 }
