@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class FishSpawner1 : MonoBehaviour
+public class BigFishSpawner : MonoBehaviour
 {
     public GameObject fishPrefab;
-    public float spawnInterval = 3.0f;
-    public int maxFishCount = 10;
+    public float spawnInterval = 5.0f;
+    public int maxFishCount = 5;
 
     public GameObject water; // Reference to the GameObject representing your water rectangle.
     public GameObject parent;
@@ -36,14 +35,14 @@ public class FishSpawner1 : MonoBehaviour
             float randomY = Random.Range(waterBoundsMax.y, waterBoundsMin.y);
 
             Vector3 spawnPosition = new Vector3(randomX, randomY, 0);
-            GameObject newFish =  Instantiate(fishPrefab, spawnPosition, Quaternion.identity, parent.transform);
+            GameObject newFish = Instantiate(fishPrefab, spawnPosition, Quaternion.identity, parent.transform);
             newFish.SetActive(true);
             currentFishCount++;
         }
     }
 
     public void DecreaseFish()
-    { 
-        currentFishCount--; 
+    {
+        currentFishCount--;
     }
 }
