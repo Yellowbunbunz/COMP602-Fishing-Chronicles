@@ -8,7 +8,7 @@ public class BigFishSpawner : MonoBehaviour
     public float spawnInterval = 5.0f;
     public int maxFishCount = 5;
 
-    public GameObject water; // Reference to the GameObject representing your water rectangle.
+    public GameObject water;
     public GameObject parent;
 
     private int currentFishCount = 0;
@@ -38,6 +38,7 @@ public class BigFishSpawner : MonoBehaviour
             GameObject newFish = Instantiate(fishPrefab, spawnPosition, Quaternion.identity, parent.transform);
             newFish.SetActive(true);
             currentFishCount++;
+        
         }
     }
 
