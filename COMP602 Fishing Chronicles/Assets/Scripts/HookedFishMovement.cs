@@ -16,6 +16,8 @@ public class HookedFishMovement : MonoBehaviour
     private GameObject hook;
     Collider2D waterBounds;
 
+    public static ItemPickup Instance;
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -45,7 +47,7 @@ public class HookedFishMovement : MonoBehaviour
                 // Fish is at the top, release it.
                 DeleteFish();
 
-                ItemPickup.Instance.Pickup();
+             
             }
             else
             {
@@ -76,6 +78,12 @@ public class HookedFishMovement : MonoBehaviour
             {
                 fishSpawner.DecreaseFish();
             }
+
+            if (ItemPickup.Instance != null)
+            {
+                ItemPickup.Instance.Pickup();
+            }
+
             Destroy(gameObject);
             fish.enabled = true;
             hook = null;
