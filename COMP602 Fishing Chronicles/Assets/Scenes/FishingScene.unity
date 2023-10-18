@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -242,7 +242,44 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3996552679706889565, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 825984867}
+    - targetCorrespondingSourceObject: {fileID: 3312595145973450697, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 690377511}
+    - targetCorrespondingSourceObject: {fileID: 3312595145973450697, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 690377510}
   m_SourcePrefab: {fileID: 100100000, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
+--- !u!1 &690377509 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3312595145973450697, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
+  m_PrefabInstance: {fileID: 690377508}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &690377510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690377509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c39c0aee74b91c84ba42b84de8f76502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 61825bf28ec41fb4a8bfa851c640f72d, type: 2}
+--- !u!114 &690377511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690377509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130389bbeac2ad141a81102748cabb20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 61825bf28ec41fb4a8bfa851c640f72d, type: 2}
 --- !u!1 &715083364 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3666858755486204852, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11699d670d2ee4c40a236a593f7ad2dd, type: 3}
-  m_Name: Object
+  m_Name: Fish1
   m_EditorClassIdentifier: 
-  ID: 1
-  itemName: Cube
-  value: 10
-  icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  ID: 0
+  itemName: Fish1
+  value: 0
+  icon: {fileID: 21300000, guid: 60c35420f1ca7da4a9d34dde9b6a9a1a, type: 3}
