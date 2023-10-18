@@ -5,25 +5,37 @@ using UnityEngine;
 public class RodMovement : MonoBehaviour
 {
     public float speed = 1.0f;
+    public SpriteRenderer water; // Reference to the sprite background.
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private Bounds bounds;
+
+    void Start()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (water != null)
         {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            bounds = water.bounds;
         }
-        if(Input.GetKey(KeyCode.D)) { 
-            
-            transform.Translate(Vector2.right * speed * Time.deltaTime); 
-        }
-        if( Input.GetKey(KeyCode.W))
+        else
         {
-            transform.Translate(Vector2.up * speed * Time.deltaTime);
+            Debug.LogError("Background sprite not assigned.");
         }
-        if(Input.GetKey(KeyCode.S)) {
+    }
 
-            transform.Translate(Vector2.down * speed * Time.deltaTime);
-        }
+    void Update()
+    {
+        if (water == null)
+            return;
+
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        Vector3 movement = new Vector3(horizontalInput, verticalInput, 0) * speed * Time.deltaTime;
+        Vector3 newPosition = transform.position + movement;
+
+        // Clamp the new position within the bounds of the background.
+        float clampedX = Mathf.Clamp(newPosition.x, bounds.min.x, bounds.max.x);
+        float clampedY = Mathf.Clamp(newPosition.y, bounds.min.y-5, bounds.max.y-5);
+
+        transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }
 }

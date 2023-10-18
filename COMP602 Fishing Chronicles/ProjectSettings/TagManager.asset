@@ -11,6 +11,7 @@ TagManager:
   - MainWorld
   - MainHallCam
   - Fish
+  - BigFish
   layers:
   - Default
   - TransparentFX
