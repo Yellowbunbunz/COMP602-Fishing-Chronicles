@@ -8,6 +8,7 @@ public class RodMovement : MonoBehaviour
     public SpriteRenderer water; // Reference to the sprite background.
 
     private Bounds bounds;
+    private float offset = 0.1f;
 
     void Start()
     {
@@ -34,7 +35,7 @@ public class RodMovement : MonoBehaviour
 
         // Clamp the new position within the bounds of the background.
         float clampedX = Mathf.Clamp(newPosition.x, bounds.min.x, bounds.max.x);
-        float clampedY = Mathf.Clamp(newPosition.y, bounds.min.y-5, bounds.max.y-5);
+        float clampedY = Mathf.Clamp(newPosition.y, bounds.min.y - offset, bounds.max.y+ offset);
 
         transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }

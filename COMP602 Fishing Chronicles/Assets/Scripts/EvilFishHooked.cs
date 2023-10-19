@@ -37,8 +37,15 @@ public class EvilFishHooked : MonoBehaviour
             Collider2D waterBounds = water.GetComponent<BoxCollider2D>();
 
             // Calculate boundaries of the water rectangle.
-            Vector2 waterBoundsMax = waterBounds.bounds.max;
+            Vector2 waterBoundsMin = waterBounds.bounds.min;
 
+            if (hook.transform.position.y <= waterBoundsMin.y)
+            {
+                // Fish is at the top, release it.
+                distroyHook();
+            }
+            else
+            {
                 // Fish is still hooked, start the release timer.
                 releaseTimer += Time.deltaTime;
 
@@ -46,23 +53,30 @@ public class EvilFishHooked : MonoBehaviour
                 if (releaseTimer >= releaseTime)
                 {
                     ReleaseFish();
-                    fish.enabled = true;
                 }
-                else if(hook.transform.position.y >= waterBoundsMax.y)
-                {
-                    Destroy(hook);
-                }
-        }
+            }
+        }  
 
-        void ReleaseFish()
+    }
+
+    void distroyHook()
+    {
+        if (isHooked)
         {
-            // Release the fish.
-            isHooked = false;
+            Destroy(hook);
             fish.enabled = true;
-            hook = null;
-            releaseTimer = 0.0f;
+            isHooked = false;
+            releaseTime = 0.0f;
         }
+    }
 
+    void ReleaseFish()
+    {
+        // Release the fish.
+        isHooked = false;
+        fish.enabled = true;
+        hook = null;
+        releaseTimer = 0.0f;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
