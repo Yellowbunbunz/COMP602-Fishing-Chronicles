@@ -17,6 +17,7 @@ public class MenuScripts : MonoBehaviour
 
     public void Quit()
     {
+        //this will close the app but only once exported cannot close unity
         Debug.Log("exited app");
         Application.Quit();
     }
