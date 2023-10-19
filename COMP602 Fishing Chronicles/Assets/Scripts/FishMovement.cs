@@ -8,6 +8,7 @@ public class FishMovement : MonoBehaviour
     public float speed = 0.5f;
     public float changeDirectionInterval = 10.0f; // Time interval to change direction.
     public float maxDirectionChangeAngle = 180.0f; // Maximum angle change in degrees.
+    public SpriteRenderer spriteRenderer;
     public GameObject water;
     Bounds waterBounds;
 
@@ -27,6 +28,17 @@ public class FishMovement : MonoBehaviour
     {
         // Move towards the target position.
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        
+        // Flip the sprite if moving to the right.
+        if (targetPosition.x > transform.position.x)
+        {
+            spriteRenderer.flipX = true;
+        }
+        // Flip the sprite if moving to the left.
+        else if (targetPosition.x < transform.position.x)
+        {
+            spriteRenderer.flipX = false;
+        }
 
         // Check if the fish has reached the target position.
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
