@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject settingsMenuUI;
 
     // Update is called once per frame
     void Update()
@@ -14,7 +15,7 @@ public class PauseMenu : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             //if game already paused should exit pause menu otherwise open pause menu
-            if(GameIsPaused)
+            if(GameIsPaused && !settingsMenuUI.active)
             {
                 Resume();
             }
