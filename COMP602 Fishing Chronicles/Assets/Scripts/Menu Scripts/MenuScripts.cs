@@ -10,6 +10,11 @@ public class MenuScripts : MonoBehaviour
         SceneManager.LoadScene("MainWorld");//loads the scene
     }
 
+    public void Settings()
+    {
+
+    }
+
     public void Quit()
     {
         Debug.Log("exited app");
