@@ -11,6 +11,7 @@ public class SharkMovement : MonoBehaviour
     public float eatCooldown = 3.0f; 
     public float maxDirectionChangeAngle = 180f;
     public float changeDirectionInterval = 10.0f;
+    public SpriteRenderer spriteRenderer;
     public GameObject water;
     public FishSpawner fishSpawner;
     public BigFishSpawner bigFishSpawner;
@@ -28,7 +29,7 @@ public class SharkMovement : MonoBehaviour
     private void Start()
     {
         sharkRigidbody = GetComponent<Rigidbody2D>();
-        lastEatTime = -eatCooldown;
+        lastEatTime = 0.0f;
         initialPosition = transform.position;
         GetRandomTargetPosition();
         waterBounds = water.GetComponent<BoxCollider2D>().bounds;
@@ -37,9 +38,23 @@ public class SharkMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+      
         if (Time.time - lastEatTime >= eatCooldown)
         {
+            // Flip the sprite if moving to the right.
+            if (targetPosition.x > transform.position.x)
+            {
+                spriteRenderer.flipX = false;
+            }
+            // Flip the sprite if moving to the left.
+            else if (targetPosition.x < transform.position.x)
+            {
+                spriteRenderer.flipX = true;
+            }
+
             FindClosestFish();
+
             if (closestFish != null)
             {
                 Vector3 direction = closestFish.position - transform.position;
