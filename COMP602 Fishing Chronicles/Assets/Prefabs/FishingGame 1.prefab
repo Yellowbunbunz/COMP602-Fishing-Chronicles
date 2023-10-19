@@ -192,7 +192,6 @@ MonoBehaviour:
   changeDirectionInterval: 10
   maxDirectionChangeAngle: 360
   water: {fileID: 3996552679706889565}
-  spriteRenderer: {fileID: 2188137809680704564}
 --- !u!114 &6939032794513557395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,8 +279,8 @@ Transform:
   m_GameObject: {fileID: 3625150923829560002}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.21, y: -1.12, z: -0.031188663}
-  m_LocalScale: {x: 1.0316107, y: 1.3889674, z: 1}
+  m_LocalPosition: {x: 0, y: -0.030800104, z: -0.031188663}
+  m_LocalScale: {x: 0.33333334, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4770658656372247623}
@@ -327,7 +326,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b379ab868a704cb48a7546ca7a24e254, type: 3}
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -351,12 +350,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialSpeed: 2
-  maxSpeed: 5
-  detectionRadius: 2
+  maxSpeed: 8
+  detectionRadius: 5
   eatCooldown: 3
   maxDirectionChangeAngle: 180
   changeDirectionInterval: 10
-  spriteRenderer: {fileID: 2271925011406729890}
   water: {fileID: 3996552679706889565}
   fishSpawner: {fileID: 3704870466582484436}
   bigFishSpawner: {fileID: 2940096637059633590}
@@ -636,7 +634,6 @@ MonoBehaviour:
   changeDirectionInterval: 10
   maxDirectionChangeAngle: 180
   water: {fileID: 3996552679706889565}
-  spriteRenderer: {fileID: 5662023051832929465}
 --- !u!1 &6762009116256552872
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,11 +875,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8956464658136383139}
   m_SourcePrefab: {fileID: 100100000, guid: 7ad65466718a4ef48a1c5c92ef3f7974, type: 3}
---- !u!212 &1740250021783276015 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 8106451058578920186, guid: 7ad65466718a4ef48a1c5c92ef3f7974, type: 3}
-  m_PrefabInstance: {fileID: 7519175627206662933}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6372944602343052659 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3470099640052551270, guid: 7ad65466718a4ef48a1c5c92ef3f7974, type: 3}
@@ -904,7 +896,6 @@ MonoBehaviour:
   changeDirectionInterval: 10
   maxDirectionChangeAngle: 180
   water: {fileID: 3996552679706889565}
-  spriteRenderer: {fileID: 1740250021783276015}
 --- !u!114 &8956464658136383139
 MonoBehaviour:
   m_ObjectHideFlags: 0
