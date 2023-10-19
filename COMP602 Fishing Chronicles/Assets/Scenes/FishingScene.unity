@@ -221,7 +221,7 @@ PrefabInstance:
       objectReference: {fileID: 715083364}
     - target: {fileID: 3704870466582484436, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3704870466582484436, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
       propertyPath: maxFishCount
@@ -388,12 +388,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3996552679706889565, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 825984867}
-    - targetCorrespondingSourceObject: {fileID: 3625150923829560002, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 736439913}
-    - targetCorrespondingSourceObject: {fileID: 3625150923829560002, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 736439912}
   m_SourcePrefab: {fileID: 100100000, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
 --- !u!1 &715083364 stripped
 GameObject:
@@ -496,70 +490,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &715083366 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3704870466582484436, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
-  m_PrefabInstance: {fileID: 690377508}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715083364}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 146c1f98dee053042bfcce0cd99614ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &736439910 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3625150923829560002, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
-  m_PrefabInstance: {fileID: 690377508}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &736439912
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736439910}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &736439913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736439910}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e58717da8237aab48a1dc230f9f076f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialSpeed: 0.3
-  maxSpeed: 3
-  detectionRadius: 1.5
-  eatCooldown: 5
-  maxDirectionChangeAngle: 180
-  changeDirectionInterval: 10
-  water: {fileID: 825984864}
-  fishSpawner: {fileID: 715083366}
-  bigFishSpawner: {fileID: 0}
 --- !u!1 &825984864 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3996552679706889565, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
