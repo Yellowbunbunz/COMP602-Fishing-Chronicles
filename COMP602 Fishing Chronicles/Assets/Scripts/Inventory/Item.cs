@@ -11,5 +11,13 @@ public class Item : ScriptableObject
     public string itemName;
     public int value;
     public Sprite icon;
+    public int sellAmount;
+
+    public static Item instance;
+
+    public void Awake()
+    {
+        instance = this;
+    }
 
 }

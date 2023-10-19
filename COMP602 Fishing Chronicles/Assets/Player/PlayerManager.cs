@@ -11,12 +11,16 @@ public class PlayerManager : MonoBehaviour
 
     public bool isInteracting;
 
+    public static PlayerManager instance;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
         inputManager = GetComponent<InputManager>();
         cameraManager = FindObjectOfType<CameraManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
+
+        instance = this;
     }
 
     private void Update()

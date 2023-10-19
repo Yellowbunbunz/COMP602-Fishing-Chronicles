@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
+    //public GameObject currencyManagerObject;
+    public CurrencyManager currencyManager;
     public List<Item> Items = new List<Item>();
 
     public Transform ItemContent;
@@ -14,18 +16,25 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject InventoryUI;
 
-    private bool isInventoryOpen = false;
+    public bool isInventoryOpen = false;
 
     public InventoryItemController[] inventoryItems;
+
+    private void Awake()
+    {
+        Debug.Log("InventoryManager Awake");
+        Instance = this;
+    }
 
     private void Start()
     {
         CloseInventory();
-    }
 
-    private void Awake()
-    {
-        Instance = this;
+        //currencyManager = currencyManagerObject.GetComponent<CurrencyManager>();
+        //if (currencyManager == null)
+        //{
+        //    Debug.LogError("CurrencyManager script component not found on the CurrencyManager GameObject.");
+        //}
     }
 
     private void Update()
@@ -66,6 +75,7 @@ public class InventoryManager : MonoBehaviour
             var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
             var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
             var removeButton = obj.transform.Find("RemoveButton").GetComponent<Button>();
+            var sellButton = obj.transform.Find("SellButton").GetComponent<Button>();
 
             itemName.text = item.itemName;
             itemIcon.sprite = item.icon;
@@ -74,14 +84,27 @@ public class InventoryManager : MonoBehaviour
         SetInventoryItems();
     }
 
-    void OpenInventory()
+    public void SellItems(Item item)
+    {
+        if (currencyManager != null)
+        {
+            currencyManager.AddMoney(item.sellAmount);
+            Remove(item);
+        }
+        else
+        {
+            Debug.LogWarning("CurrencyManager reference is not set.");
+        }
+    }
+
+    public void OpenInventory()
     {
         InventoryUI.SetActive(true);
         isInventoryOpen = true;
         ListItems();
     }
 
-    void CloseInventory()
+    public void CloseInventory()
     {
         InventoryUI.SetActive(false);
         isInventoryOpen = false;

@@ -16,3 +16,4 @@ MonoBehaviour:
   itemName: Fish1
   value: 0
   icon: {fileID: 21300000, guid: 60c35420f1ca7da4a9d34dde9b6a9a1a, type: 3}
+  sellAmount: 50
