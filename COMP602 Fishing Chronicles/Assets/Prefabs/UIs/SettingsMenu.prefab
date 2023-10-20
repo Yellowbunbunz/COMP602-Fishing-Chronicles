@@ -1021,6 +1021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad0d724e448ea64892014616819ee18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 4696360495196151247}
 --- !u!95 &3748197020747355342
 Animator:
   serializedVersion: 5
