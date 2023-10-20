@@ -658,6 +658,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 324315543759421566, guid: 413c6a08cacf21d43b6239cd874e442c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3374388773708354724, guid: 413c6a08cacf21d43b6239cd874e442c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -742,6 +746,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7522437967596905527, guid: 413c6a08cacf21d43b6239cd874e442c, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 2248146944
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -759,9 +767,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 246282414}
+    - target: {fileID: 2547394589857419375, guid: 1164d6699690cdd4a97884f3b16d1422, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5725807254222789117, guid: 1164d6699690cdd4a97884f3b16d1422, type: 3}
       propertyPath: m_Name
       value: SettingsMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5725807254222789117, guid: 1164d6699690cdd4a97884f3b16d1422, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7301009653698684662, guid: 1164d6699690cdd4a97884f3b16d1422, type: 3}
       propertyPath: m_Pivot.x
@@ -841,6 +857,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7301009653698684662, guid: 1164d6699690cdd4a97884f3b16d1422, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481956824250546695, guid: 1164d6699690cdd4a97884f3b16d1422, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
