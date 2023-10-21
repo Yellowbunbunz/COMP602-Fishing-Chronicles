@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,9 +12,35 @@ public class InventoryManager : MonoBehaviour
     public Transform ItemContent;
     public GameObject InventoryItem;
 
+    public GameObject InventoryUI;
+
+    private bool isInventoryOpen = false;
+
+    public InventoryItemController[] inventoryItems;
+
+    private void Start()
+    {
+        CloseInventory();
+    }
+
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (isInventoryOpen)
+            {
+                CloseInventory();
+            }
+            else
+            {
+                OpenInventory();
+            }
+        }
     }
 
     public void Add(Item item)
@@ -38,9 +65,35 @@ public class InventoryManager : MonoBehaviour
             GameObject obj = Instantiate(InventoryItem, ItemContent);
             var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
             var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+            var removeButton = obj.transform.Find("RemoveButton").GetComponent<Button>();
 
             itemName.text = item.itemName;
             itemIcon.sprite = item.icon;
+        }
+
+        SetInventoryItems();
+    }
+
+    void OpenInventory()
+    {
+        InventoryUI.SetActive(true);
+        isInventoryOpen = true;
+        ListItems();
+    }
+
+    void CloseInventory()
+    {
+        InventoryUI.SetActive(false);
+        isInventoryOpen = false;
+    }
+
+    public void SetInventoryItems()
+    {
+        inventoryItems = ItemContent.GetComponentsInChildren<InventoryItemController>();
+
+        for (int i = 0; i < Items.Count; i++)
+        {
+            inventoryItems[i].AddItem(Items[i]);
         }
     }
 }

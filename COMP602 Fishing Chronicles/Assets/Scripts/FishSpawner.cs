@@ -9,7 +9,7 @@ public class FishSpawner : MonoBehaviour
     public float spawnInterval = 3.0f;
     public int maxFishCount = 10;
 
-    public GameObject water; // Reference to the GameObject representing your water rectangle.
+    public GameObject water; 
     public GameObject parent;
 
     private int currentFishCount = 0;
@@ -18,10 +18,12 @@ public class FishSpawner : MonoBehaviour
     {
         InvokeRepeating("SpawnFish", 0.0f, spawnInterval);
         fishPrefab.SetActive(false);
+        
     }
 
     private void SpawnFish()
     {
+        Debug.Log(currentFishCount);
         if (currentFishCount < maxFishCount)
         {
             // Calculate boundaries of the water rectangle.
@@ -44,6 +46,6 @@ public class FishSpawner : MonoBehaviour
 
     public void DecreaseFish()
     { 
-        currentFishCount--; 
+        this.currentFishCount--; 
     }
 }
