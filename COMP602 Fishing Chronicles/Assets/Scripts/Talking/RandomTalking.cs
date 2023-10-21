@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RandomTalking : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class RandomTalking : MonoBehaviour
     int numw = 0;
     int numf = 0;
     int numt = 0;
+    public Text dialogue;
 
     private void Start()
     {
@@ -21,6 +23,7 @@ public class RandomTalking : MonoBehaviour
     public void OnTriggerEnter(Collider collision)
     {
         //When a player enters it should make the npc say a "hello script"
+        //once the player has met an npc, the npc will say a "talking script"
         if (collision.tag == "Player" && entrance)
         {
             Invoke("firstSpeech", 1);
@@ -48,35 +51,35 @@ public class RandomTalking : MonoBehaviour
     {
         if(numw == 0)
         {
-            Debug.Log("Welcome stranger");
+            dialogue.text = "Welcome stranger";
         }
         else if (numw == 1)
         {
-            Debug.Log("Welcome to our town of unassigned fishing village");
+            dialogue.text = "Welcome to our town of unassigned fishing village";
         }
         else if (numw == 2)
         {
-            Debug.Log("Hey, I haven't seen you before");
+            dialogue.text = "Hey, I haven't seen you before";
         }
         else if (numw == 3)
         {
-            Debug.Log("A new face? How delightful");
+            dialogue.text = "A new face? How delightful";
         }
         else if (numw == 4)
         {
-            Debug.Log("Our town is pretty friendly to new comers!");
+            dialogue.text = "Our town is pretty friendly to new comers!";
         }
         else if (numw == 5)
         {
-            Debug.Log("We don't like new comers round these parts...");
+            dialogue.text = "We don't like new comers round these parts...";
         }
         else if (numw == 6)
         {
-            Debug.Log("Oooo, where are you from?");
+            dialogue.text = "Oooo, where are you from?";
         }
         else if (numw == 7)
         {
-            Debug.Log("Ooooo, my oh my, haven't seen a new person round these parts in a while");
+            dialogue.text = "Ooooo, my oh my, haven't seen a new person round these parts in a while";
         }
 
     }
