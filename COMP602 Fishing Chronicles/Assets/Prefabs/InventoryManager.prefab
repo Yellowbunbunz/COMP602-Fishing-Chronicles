@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 482831927975349925}
   - component: {fileID: 8995134047178149728}
-  - component: {fileID: 2820917449125643257}
   m_Layer: 0
   m_Name: InventoryManager
   m_TagString: Untagged
@@ -45,23 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 089be9291b7e9bd45aa29088c5b19e1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currencyManager: {fileID: 2820917449125643257}
+  currencyManager: {fileID: 0}
   Items: []
   ItemContent: {fileID: 0}
   InventoryItem: {fileID: 484959431031376060, guid: 771f085369ec9914ba3d0b31a67f30ad, type: 3}
   InventoryUI: {fileID: 0}
   isInventoryOpen: 0
   inventoryItems: []
---- !u!114 &2820917449125643257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3355840840549094488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21cdf4ddc2ada164394d495be63ae8ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  money: 0

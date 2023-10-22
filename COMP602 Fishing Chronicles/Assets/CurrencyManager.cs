@@ -9,6 +9,8 @@ public class CurrencyManager : MonoBehaviour
 
     public static CurrencyManager Instance;
 
+    public static int instanceCount = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,9 @@ public class CurrencyManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        instanceCount++;
+        Debug.Log("CurrencyManager instance count: " + instanceCount);
     }
 
     // Update is called once per frame

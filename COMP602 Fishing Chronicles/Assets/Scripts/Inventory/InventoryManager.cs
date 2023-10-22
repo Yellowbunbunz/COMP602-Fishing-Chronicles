@@ -20,10 +20,23 @@ public class InventoryManager : MonoBehaviour
 
     public InventoryItemController[] inventoryItems;
 
+    public static int instanceCount = 0;
+
     private void Awake()
     {
-        Debug.Log("InventoryManager Awake");
-        Instance = this;
+        if (Instance == null)
+        {
+            Debug.Log("InventoryManager Awake");
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        instanceCount++;
+        Debug.Log("InventoryManager instance count: " + instanceCount);
     }
 
     private void Start()
@@ -55,6 +68,7 @@ public class InventoryManager : MonoBehaviour
     public void Add(Item item)
     {
         Items.Add(item);
+        currencyManager.AddMoney(item.sellAmount);
     }
 
     public void Remove(Item item)
@@ -89,7 +103,7 @@ public class InventoryManager : MonoBehaviour
         if (currencyManager != null)
         {
             currencyManager.AddMoney(item.sellAmount);
-            Remove(item);
+            Items.Remove(item);
         }
         else
         {

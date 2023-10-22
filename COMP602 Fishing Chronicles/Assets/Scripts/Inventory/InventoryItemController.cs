@@ -11,10 +11,14 @@ public class InventoryItemController : MonoBehaviour
     public Button removeButton;
     public Button sellButton;
 
+    public static int instanceCount = 0;
+
     private void Awake()
     {
         Instance = this;
 
+        instanceCount++;
+        Debug.Log("Item instance count: " + instanceCount);
     }
 
     public void ShowSellButton()
@@ -36,9 +40,15 @@ public class InventoryItemController : MonoBehaviour
 
     public void SellItem()
     {
-        InventoryManager.Instance.SellItems(item);
-
-        Destroy(gameObject);
+        if (InventoryManager.Instance != null && item != null)
+        {
+            InventoryManager.Instance.SellItems(item);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.LogWarning("InventoryManager or item reference is not set.");
+        }
     }
 
     public void AddItem(Item newItem)

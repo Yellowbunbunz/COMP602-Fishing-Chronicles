@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8857bfe544f09d468b9f6a73b5180f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 8995134047178149728, guid: e1bf3e1230c7b3445ba6dd43165a8f6d, type: 3}
   removeButton: {fileID: 0}
   sellButton: {fileID: 1817813529992765132}
 --- !u!1 &2147071935885778149
