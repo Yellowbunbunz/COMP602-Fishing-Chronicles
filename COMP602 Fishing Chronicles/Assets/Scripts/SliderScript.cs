@@ -16,7 +16,7 @@ public class SliderScript : MonoBehaviour
         Fill.color = gradient.Evaluate(1f);
     }
 
-    public void SetSlider(int value)
+    public void SetSlider(float value)
     {
         slider.value = value;
 

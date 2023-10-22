@@ -15,6 +15,7 @@ public class HookedFishMovement : MonoBehaviour
     public GameObject water;
     private GameObject hook;
     Collider2D waterBounds;
+    public XPFromFish xp;
 
     public static ItemPickup Instance;
 
@@ -42,12 +43,9 @@ public class HookedFishMovement : MonoBehaviour
 
             if (hook.transform.position.y >= waterBoundsMax.y)
             {
-                
-
                 // Fish is at the top, release it.
                 DeleteFish();
-
-             
+                xp.giveXP();
             }
             else
             {
