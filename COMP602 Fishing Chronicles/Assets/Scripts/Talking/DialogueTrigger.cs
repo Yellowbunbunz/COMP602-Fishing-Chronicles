@@ -7,9 +7,9 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
 
-    public void OnTriggerEnter(Collider collision)
+    public void OnCollisionEnter(Collision collision)
     {
-        invoke(TriggerDialogue);
+        Debug.Log(collision.gameObject.name);//on collision, print the npc name in the debug fjnornvj
     }
 
     private void invoke(Action triggerDialogue)
@@ -17,10 +17,7 @@ public class DialogueTrigger : MonoBehaviour
         throw new NotImplementedException();
     }
 
-    public void TriggerDialogue ()
-    {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-    }
+    
 
     
 }

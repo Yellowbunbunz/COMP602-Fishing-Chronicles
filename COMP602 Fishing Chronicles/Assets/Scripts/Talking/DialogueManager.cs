@@ -1,43 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    private Queue<string> sentences;
+    public TMP_Text dialogueText;
+
     void Start()
     {
-        sentences = new Queue<string>();
+        UpdateDialogue();
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    void Update()
     {
-        Debug.Log("Starting conversation with " +  dialogue.name);
-        
-        sentences.Clear();
-
-        foreach(string sentence in dialogue.sentences)
+        UpdateDialogue();
+    }
+    private void UpdateDialogue()
+    {
+        if(NPCInteraction.instance.isPlayerNearby())
         {
-            sentences.Enqueue(sentence);
+            dialogueText.text = "peepee";
+            Debug.Log("penis B)");
         }
-
-        DisplayNextSentence();
-    }
-
-    public void DisplayNextSentence()
-    {
-        if(sentences.Count == 0)
-        {
-            EndDialogue();
-            return;
-        }
-
-        string sentence = sentences.Dequeue();
-        Debug.Log(sentence);
-    }
-    void EndDialogue()
-    {
-        Debug.Log("End of dialogue");
     }
 
 }

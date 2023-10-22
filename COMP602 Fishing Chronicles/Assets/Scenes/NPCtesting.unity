@@ -1488,6 +1488,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 6949884010853545320, guid: 7b9c552e0612cef439627338b5ceac6c, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6949884010853545320, guid: 7b9c552e0612cef439627338b5ceac6c, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8913143910573080734, guid: 7b9c552e0612cef439627338b5ceac6c, type: 3}
       propertyPath: m_LocalScale.x
       value: 6

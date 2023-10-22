@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
     InputManager inputManager;
     PlayerLocomotion playerLocomotion;
     CameraManager cameraManager;
+    public static PlayerManager instance;
 
     public bool isInteracting;
 
@@ -17,6 +18,7 @@ public class PlayerManager : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         cameraManager = FindObjectOfType<CameraManager>();
         playerLocomotion = GetComponent<PlayerLocomotion>();
+        instance = this;
     }
 
     private void Update()
