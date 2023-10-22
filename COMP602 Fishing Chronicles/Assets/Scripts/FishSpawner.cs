@@ -23,7 +23,6 @@ public class FishSpawner : MonoBehaviour
 
     private void SpawnFish()
     {
-        Debug.Log(currentFishCount);
         if (currentFishCount < maxFishCount)
         {
             // Calculate boundaries of the water rectangle.

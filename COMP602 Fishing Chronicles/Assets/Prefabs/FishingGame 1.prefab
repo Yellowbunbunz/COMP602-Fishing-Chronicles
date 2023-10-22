@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3044854292172558136}
   - component: {fileID: 7433172219258825768}
   - component: {fileID: 8353580932899557485}
+  - component: {fileID: 3911221505828498350}
   m_Layer: 0
   m_Name: small fish
   m_TagString: Fish
@@ -197,6 +198,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3312595145973450697}
   m_CullTransparentMesh: 1
+--- !u!114 &3911221505828498350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3312595145973450697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc1a36bdac0896c46bfce168445c1e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xpAmount: 1
 --- !u!1 &3666858755486204852
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +382,7 @@ GameObject:
   - component: {fileID: 5722293329915561434}
   - component: {fileID: 1573459385794460783}
   - component: {fileID: 8267904801008830668}
+  - component: {fileID: 967500332786169644}
   m_Layer: 0
   m_Name: BigFish
   m_TagString: BigFish
@@ -424,6 +439,7 @@ MonoBehaviour:
   fish: {fileID: 7102356006400184541}
   bigFishSpawner: {fileID: 2940096637059633590}
   water: {fileID: 3996552679706889565}
+  xp: {fileID: 0}
 --- !u!212 &111392531477245796
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -537,6 +553,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 0236e5e4b56014849b5f8dd233016f70, type: 2}
+--- !u!114 &967500332786169644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361616835489847198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc1a36bdac0896c46bfce168445c1e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xpAmount: 1
 --- !u!1 &5705807787403956079
 GameObject:
   m_ObjectHideFlags: 0
