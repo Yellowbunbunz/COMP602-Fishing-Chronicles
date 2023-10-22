@@ -475,7 +475,7 @@ MonoBehaviour:
         m_MethodName: SellItem
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 61825bf28ec41fb4a8bfa851c640f72d, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 0236e5e4b56014849b5f8dd233016f70, type: 2}
           m_ObjectArgumentAssemblyTypeName: Item, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0

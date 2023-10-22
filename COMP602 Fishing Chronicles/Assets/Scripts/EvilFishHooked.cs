@@ -43,6 +43,11 @@ public class EvilFishHooked : MonoBehaviour
             {
                 // Fish is at the top, release it.
                 distroyHook();
+
+                if (ItemPickup.Instance != null)
+                {
+                    ItemPickup.Instance.Pickup();
+                }
             }
             else
             {

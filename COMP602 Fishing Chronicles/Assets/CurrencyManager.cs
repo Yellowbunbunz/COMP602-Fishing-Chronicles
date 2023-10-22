@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.Examples;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class CurrencyManager : MonoBehaviour
 {
@@ -10,6 +13,8 @@ public class CurrencyManager : MonoBehaviour
     public static CurrencyManager Instance;
 
     public static int instanceCount = 0;
+
+    public TMP_Text currencyText;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +42,12 @@ public class CurrencyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateCurrency();
+    }
+
+    private void UpdateCurrency()
+    {
+        currencyText.text = string.Format("{0:0}.00", money);
     }
 
     public void AddMoney(int amount)
