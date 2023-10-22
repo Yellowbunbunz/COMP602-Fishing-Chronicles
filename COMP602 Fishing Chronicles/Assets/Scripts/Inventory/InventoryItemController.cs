@@ -6,12 +6,19 @@ using UnityEngine.UI;
 public class InventoryItemController : MonoBehaviour
 {
     public static InventoryItemController Instance;
+    public InventoryManager inventoryManager;
     Item item;
 
     public Button removeButton;
     public Button sellButton;
 
     public static int instanceCount = 0;
+
+    private void Start()
+    {
+        Button button = sellButton.GetComponent<Button>();
+        button.onClick.AddListener(TaskOnClick);
+    }
 
     private void Awake()
     {
@@ -38,10 +45,12 @@ public class InventoryItemController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void SellItem()
+    public void SellItem(Item item)
     {
+
         if (InventoryManager.Instance != null && item != null)
         {
+            Debug.Log("Yeah, I'm entering this method now");
             InventoryManager.Instance.SellItems(item);
             Destroy(gameObject);
         }
@@ -49,6 +58,11 @@ public class InventoryItemController : MonoBehaviour
         {
             Debug.LogWarning("InventoryManager or item reference is not set.");
         }
+    }
+
+    void TaskOnClick()
+    {
+        Debug.Log("Yes, button is clicked");
     }
 
     public void AddItem(Item newItem)
