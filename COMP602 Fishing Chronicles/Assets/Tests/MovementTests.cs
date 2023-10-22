@@ -10,6 +10,7 @@ public class MovementTests
     [Test]
     public void CardinalMovement()
     {
+        //testing walking forward backward and such
         Assert.AreEqual(new Vector3(0, 0, 1), Movements.DirectionF);
         Assert.AreEqual(new Vector3(0, 0, -1), Movements.DirectionB);
         Assert.AreEqual(new Vector3(1, 0, 0), Movements.DirectionL);
@@ -18,6 +19,7 @@ public class MovementTests
     [Test]
     public void Complex()
     {
+        //testing the ability to sprint walk and jump
         float walkSpeed = 0.5f;
         float sprintSpeed = 4f;
         Assert.AreEqual(new Vector3(0, 1, 0), Movements.Jump);

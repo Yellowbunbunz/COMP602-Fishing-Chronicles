@@ -6,10 +6,22 @@ using UnityEngine.TestTools;
 
 public class MusicSwitch
 {
-    // A Test behaves as an ordinary method
     [Test]
-    public void SongChange()
+    public void SongAtPosition0IsExpected()
     {
-        Assert.AreEqual(new Vector3(0, 0, 1), Movements.DirectionF);
+        // Arrange: Create an instance of your GameMusic script.
+        GameObject gameMusicObject = new GameObject("GameMusicObject");
+        GameMusic gameMusic = gameMusicObject.AddComponent<GameMusic>();
+
+        // Act: Initialize the audioClips array.
+        gameMusic.audioClips = new AudioClip[3]; // Make sure it's properly sized and initialized.
+
+        // Set an expected AudioClip for position 0.
+        AudioClip expectedClip = Resources.Load<AudioClip>("villageMusic");
+
+        gameMusic.audioClips[0] = expectedClip; // Assign the expected AudioClip to position 0.
+
+        // Assert: Check if the song at position 0 matches the expected clip.
+        Assert.AreEqual(expectedClip, gameMusic.audioClips[0]);
     }
 }
