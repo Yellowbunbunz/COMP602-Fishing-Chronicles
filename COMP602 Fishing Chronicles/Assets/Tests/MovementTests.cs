@@ -1,29 +1,23 @@
 using System.Collections;
-using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using NUnit.Framework;
 
-public class MovementTests
+public class RodMovementTests
 {
-    // A Test behaves as an ordinary method
+    private RodMovement rodMovement;
+
     [Test]
-    public void CardinalMovement()
+    public void WaterObjectExists()
     {
-        //testing walking forward backward and such
-        Assert.AreEqual(new Vector3(0, 0, 1), Movements.DirectionF);
-        Assert.AreEqual(new Vector3(0, 0, -1), Movements.DirectionB);
-        Assert.AreEqual(new Vector3(1, 0, 0), Movements.DirectionL);
-        Assert.AreEqual(new Vector3(-1, 0, 0), Movements.DirectionR);
-    }
-    [Test]
-    public void Complex()
-    {
-        //testing the ability to sprint walk and jump
-        float walkSpeed = 0.5f;
-        float sprintSpeed = 4f;
-        Assert.AreEqual(new Vector3(0, 1, 0), Movements.Jump);
-        Assert.AreEqual(walkSpeed, Movements.Walk);
-        Assert.AreEqual(sprintSpeed, Movements.Sprint);
+        // Arrange
+        RodMovement rodMovement = new RodMovement(); // Instantiate your script
+
+        // Act
+        SpriteRenderer waterObject = rodMovement.water;
+
+        // Assert
+        Assert.IsNotNull(waterObject, "The water object should not be null.");
     }
 }
+
