@@ -29,7 +29,7 @@ public class EnterFishingGame : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetKey(KeyCode.F) && fish)
         {
             SceneManager.LoadScene("FishingScene");//loads the scene
         }

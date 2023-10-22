@@ -10,8 +10,14 @@ public class MenuScripts : MonoBehaviour
         SceneManager.LoadScene("MainWorld");//loads the scene
     }
 
+    public void Settings()
+    {
+
+    }
+
     public void Quit()
     {
+        //this will close the app but only once exported cannot close unity
         Debug.Log("exited app");
         Application.Quit();
     }

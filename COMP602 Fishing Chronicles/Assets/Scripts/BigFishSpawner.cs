@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class FishSpawner : MonoBehaviour
+public class BigFishSpawner : MonoBehaviour
 {
     public GameObject fishPrefab;
-    public float spawnInterval = 3.0f;
-    public int maxFishCount = 10;
+    public float spawnInterval = 5.0f;
+    public int maxFishCount = 5;
 
-    public GameObject water; 
+    public GameObject water;
     public GameObject parent;
 
     private int currentFishCount = 0;
@@ -18,12 +17,10 @@ public class FishSpawner : MonoBehaviour
     {
         InvokeRepeating("SpawnFish", 0.0f, spawnInterval);
         fishPrefab.SetActive(false);
-        
     }
 
     private void SpawnFish()
     {
-        Debug.Log(currentFishCount);
         if (currentFishCount < maxFishCount)
         {
             // Calculate boundaries of the water rectangle.
@@ -38,14 +35,15 @@ public class FishSpawner : MonoBehaviour
             float randomY = Random.Range(waterBoundsMax.y, waterBoundsMin.y);
 
             Vector3 spawnPosition = new Vector3(randomX, randomY, 0);
-            GameObject newFish =  Instantiate(fishPrefab, spawnPosition, Quaternion.identity, parent.transform);
+            GameObject newFish = Instantiate(fishPrefab, spawnPosition, Quaternion.identity, parent.transform);
             newFish.SetActive(true);
             currentFishCount++;
+        
         }
     }
 
     public void DecreaseFish()
-    { 
-        this.currentFishCount--; 
+    {
+        currentFishCount--;
     }
 }
