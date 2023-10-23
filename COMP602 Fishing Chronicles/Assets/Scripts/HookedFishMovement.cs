@@ -16,8 +16,7 @@ public class HookedFishMovement : MonoBehaviour
     private GameObject hook;
     Collider2D waterBounds;
     public XPFromFish xp;
-
-    public static ItemPickup Instance;
+    public StatItem fishItem;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -46,6 +45,7 @@ public class HookedFishMovement : MonoBehaviour
                 // Fish is at the top, release it.
                 DeleteFish();
                 xp.giveXP();
+                Inventory.Instance.AddItem(fishItem);
             }
             else
             {
@@ -75,11 +75,6 @@ public class HookedFishMovement : MonoBehaviour
             if (fishSpawner != null)
             {
                 fishSpawner.DecreaseFish();
-            }
-
-            if (ItemPickup.Instance != null)
-            {
-                ItemPickup.Instance.Pickup();
             }
 
             Destroy(gameObject);

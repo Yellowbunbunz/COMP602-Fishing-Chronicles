@@ -14,10 +14,10 @@ public class MainWorldManager : MonoBehaviour
             Item fishItem = new Item();
             fishItem.itemName = "Fish";
 
-            InventoryManager.Instance.Add(fishItem);
+        //    InventoryManager.Instance.Add(fishItem);
         }
 
-        InventoryManager.Instance.ListItems();
+     //   InventoryManager.Instance.ListItems();
     }
 
     // Update is called once per frame
