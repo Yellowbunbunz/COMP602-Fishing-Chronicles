@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+
+    [SerializeField]
+    private InventoryUI inventoryUI;
+
+
     Animator animator;
     InputManager inputManager;
     PlayerLocomotion playerLocomotion;
@@ -35,8 +40,11 @@ public class PlayerManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        cameraManager.HandleAllCameraMovement();
-
+        if(!inventoryUI.InventoryOpen)
+        {
+            cameraManager.HandleAllCameraMovement();
+        }
+        
         isInteracting = animator.GetBool("isInteracting");
         playerLocomotion.isJumping = animator.GetBool("isJumping");
         animator.SetBool("isGrounded", playerLocomotion.isGrounded);

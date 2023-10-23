@@ -207,6 +207,10 @@ PrefabInstance:
       propertyPath: xp
       value: 
       objectReference: {fileID: 690377509}
+    - target: {fileID: 2580230745348847333, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
+      propertyPath: BigFishItem
+      value: 
+      objectReference: {fileID: 11400000, guid: daca405b9c9bed74ba9c494bf4a60a93, type: 2}
     - target: {fileID: 3312595145973450697, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
       propertyPath: m_Name
       value: plain fish
@@ -391,6 +395,10 @@ PrefabInstance:
       propertyPath: xp
       value: 
       objectReference: {fileID: 690377510}
+    - target: {fileID: 6939032794513557395, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
+      propertyPath: fishItem
+      value: 
+      objectReference: {fileID: 11400000, guid: ae42932f17e90394891fe1d957b808bb, type: 2}
     - target: {fileID: 7433172219258825768, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
       propertyPath: m_Radius
       value: 0.25
@@ -407,7 +415,11 @@ PrefabInstance:
       propertyPath: maxDirectionChangeAngle
       value: 180
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3044854292172558136, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
+    - {fileID: 1394780007484530800, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
+    - {fileID: 8267904801008830668, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
+    - {fileID: 1573459385794460783, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3484123503762945690, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}
     - {fileID: 2662710712107817882, guid: 3575dedcd95194b4585049253ca01ea3, type: 3}

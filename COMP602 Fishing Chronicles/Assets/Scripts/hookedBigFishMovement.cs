@@ -16,9 +16,7 @@ public class hookedBigFishMovement : MonoBehaviour
     private GameObject hook;
     Collider2D waterBounds;
     public XPFromFish xp;
-
-    public static ItemPickup Instance;
-
+    public StatItem BigFishItem;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -48,10 +46,7 @@ public class hookedBigFishMovement : MonoBehaviour
                 DeleteFish();
                 xp.giveXP();
 
-                //if (ItemPickup.Instance != null)
-                //{
-                //    ItemPickup.Instance.Pickup();
-                //}
+                Inventory.Instance.AddItem(BigFishItem); 
             }
             else
             {
