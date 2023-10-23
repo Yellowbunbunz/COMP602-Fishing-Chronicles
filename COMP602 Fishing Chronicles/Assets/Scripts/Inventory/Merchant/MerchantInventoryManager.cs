@@ -26,7 +26,7 @@ public class MerchantInventoryManager : MonoBehaviour
     {
         if (Instance == null)
         {
-            Debug.Log("MerchantInventoryManager Awake");
+          //  Debug.Log("MerchantInventoryManager Awake");
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
@@ -36,7 +36,7 @@ public class MerchantInventoryManager : MonoBehaviour
         }
 
         instanceCount++;
-        Debug.Log("InventoryManager instance count: " + instanceCount);
+//        Debug.Log("InventoryManager instance count: " + instanceCount);
     }
 
     private void Start()

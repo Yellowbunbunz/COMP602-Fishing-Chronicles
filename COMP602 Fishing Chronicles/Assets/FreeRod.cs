@@ -14,7 +14,7 @@ public class FreeRod : MonoBehaviour
     {
         if (MerchantItemPickup.Instance != null)
         {
-            Debug.Log("Yes Free Rod made it here!");
+//            Debug.Log("Yes Free Rod made it here!");
             MerchantItemPickup.Instance.Pickup();
         }
         else

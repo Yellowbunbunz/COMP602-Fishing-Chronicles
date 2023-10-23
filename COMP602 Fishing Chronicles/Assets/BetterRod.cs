@@ -9,7 +9,7 @@ public class BetterRod : MonoBehaviour
     {
         if (MerchantItemPickup.Instance != null)
         {
-            Debug.Log("Yes Better Rod made it here!");
+       //     Debug.Log("Yes Better Rod made it here!");
             MerchantItemPickup.Instance.Pickup();
         }
         else

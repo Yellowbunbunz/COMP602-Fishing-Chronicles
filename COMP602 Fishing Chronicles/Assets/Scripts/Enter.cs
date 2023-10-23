@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Enter : MonoBehaviour
 {
+    Vector3 liftup = new Vector3(0, 2, 0);
     void OnCollisionEnter(Collision collision)
     {
         //This holds tags that are safe to change scenes to, so to change to scene House use the tag "house".
@@ -16,6 +17,10 @@ public class Enter : MonoBehaviour
             if (collision.collider.tag == safetags[i])
             {
                 SceneManager.LoadScene(collision.collider.tag);//loads the scene
+                if(collision.collider.tag == safetags[1])
+                {
+                    this.transform.position = this.transform.position + liftup;
+                }
             }
 
         }
