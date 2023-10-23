@@ -5,51 +5,30 @@ using UnityEngine.UI;
 
 
 public class XP : MonoBehaviour
-{
-    public int currentXP;
-    public int MaxXP;
-    public int level = 1;
-
+{  
     public SliderScript slider;
     public Text levelText;
 
     // Start is called before the first frame update
     void Start()
-    { 
-        currentXP = 0;
-        MaxXP = level * 100;
-
-        slider.SetSliderMax(MaxXP);
-        slider.SetSlider(currentXP);
+    {
+        StandardVars.vars.MaxXP = StandardVars.vars.level * 100;
+        StandardVars.vars.currentXP = 0;
+        StandardVars.vars.level = 1;
+        slider.SetSliderMax(StandardVars.vars.MaxXP);
+        slider.SetSlider(StandardVars.vars.currentXP);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.X))
-        {
-            getXP(70);
-        }
-        dispylayLevel(level);
+        dispylayLevel(StandardVars.vars.level);
+//        Debug.Log(vars.currentXP);
+        slider.SetSlider(StandardVars.vars.currentXP);
     }
 
     public void dispylayLevel(int level)
     {
         levelText.text = "Level: "+ level;
-    }
-    public void getXP(int xp)
-    {
-        currentXP += xp;
-        slider.SetSlider(currentXP);
-
-        if(currentXP>= MaxXP)
-        {
-            int Xpdiff = currentXP - MaxXP;
-            level++;
-            MaxXP = level * 100;
-            slider.SetSliderMax(MaxXP);
-            currentXP = Xpdiff;
-            slider.SetSlider(currentXP);
-        }
     }
 }
