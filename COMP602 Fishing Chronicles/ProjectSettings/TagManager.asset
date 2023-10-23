@@ -12,6 +12,7 @@ TagManager:
   - MainHallCam
   - Fish
   - BigFish
+  - Dock
   layers:
   - Default
   - TransparentFX
