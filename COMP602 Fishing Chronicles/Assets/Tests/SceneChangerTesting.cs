@@ -19,8 +19,5 @@ public class HouseSaverTests
 
         // Ensure that HouseSaver is not null, meaning it wasn't destroyed.
         Assert.IsNotNull(houseSaver);
-
-        // Ensure that HouseSaver is active in the current scene.
-       // Assert.IsTrue(houseSaver.gameObject.activeSelf);
     }
 }
