@@ -17,7 +17,14 @@ public class MerchantInteraction : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I) && IsPlayerNearby())
         {
-            
+            if (MerchantInventoryManager.Instance.isInventoryOpen)
+            {
+                MerchantInventoryManager.Instance.CloseInventory();
+            }
+            else
+            {
+                MerchantInventoryManager.Instance.OpenInventory();
+            }
         }
     }
 
