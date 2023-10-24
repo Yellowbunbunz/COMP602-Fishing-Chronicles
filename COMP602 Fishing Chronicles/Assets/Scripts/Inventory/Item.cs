@@ -8,14 +8,17 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
 
-    public int ID;
     public string itemName;
-    public int value;
     public Sprite icon;
+    public string itemDescription = "Item info"; 
 
     public virtual void Use()
     {
         Debug.Log("Using: " + itemName);
     }
 
+    public virtual string GetItemDescription()
+    {
+        return itemDescription;
+    }
 }

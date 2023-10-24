@@ -34,4 +34,15 @@ public class ItemSlot : MonoBehaviour
             Inventory.Instance.RemoveItem(item);
         }
     }
+
+
+    public void OnCursorEnter()
+    {
+        GameManager.instance.DisplayItemInfo(item.name, item.GetItemDescription(), transform.position);
+    }
+
+    public void OnCursorExit()
+    {
+        GameManager.instance.DestroyItemInfo(); 
+    }
 }
