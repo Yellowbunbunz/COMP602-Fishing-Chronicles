@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class ExitAtAnyTime : MonoBehaviour
 {
     public GameObject player;
+    public GameObject hotBar;
+
     // Update is called once per frame
     void Update()
     {
@@ -11,6 +13,7 @@ public class ExitAtAnyTime : MonoBehaviour
         {
             SceneManager.LoadScene("MainWorld");//loads the scene
             player.SetActive(true);
+            hotBar.SetActive(true);
         }
     }
 }

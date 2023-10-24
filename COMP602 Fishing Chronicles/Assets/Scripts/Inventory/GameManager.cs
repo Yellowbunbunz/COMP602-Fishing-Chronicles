@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     }
     public void OnStatItemUse(StatItemTypes itemType, int amount)
     {
-        Debug.Log("Items sold: " + itemType + " for amount: " + amount);
+//        Debug.Log("Items sold: " + itemType + " for amount: " + amount);
     }
 
     public void DisplayItemInfo(string itemName, string itemDescription, Vector2 buttonPos)

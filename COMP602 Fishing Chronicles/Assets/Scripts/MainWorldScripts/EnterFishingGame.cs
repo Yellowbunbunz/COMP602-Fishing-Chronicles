@@ -1,9 +1,11 @@
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EnterFishingGame : MonoBehaviour
 {
     bool fish = false;
+    public GameObject hotBar;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -27,6 +29,7 @@ public class EnterFishingGame : MonoBehaviour
         {
             this.gameObject.SetActive(false);
             SceneManager.LoadScene("FishingScene");//loads the scene
+            hotBar.SetActive(false);
         }
     }
 }

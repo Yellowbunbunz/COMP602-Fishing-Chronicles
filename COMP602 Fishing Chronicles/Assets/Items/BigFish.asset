@@ -15,5 +15,6 @@ MonoBehaviour:
   itemName: BigFish
   icon: {fileID: 21300000, guid: 0f6ad1ce0313695409e3b320b622cfa6, type: 3}
   itemDescription: + 25 Gold
+  value: 25
   itemType: 1
   amount: 25

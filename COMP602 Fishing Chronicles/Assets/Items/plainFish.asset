@@ -15,5 +15,6 @@ MonoBehaviour:
   itemName: plainFish
   icon: {fileID: 21300000, guid: 76c0d643a54e7424c87b3a5ed99e201b, type: 3}
   itemDescription: + 15 Gold
+  value: 15
   itemType: 0
   amount: 15
