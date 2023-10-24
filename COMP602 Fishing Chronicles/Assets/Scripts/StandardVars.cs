@@ -20,6 +20,7 @@ public class StandardVars
             MaxXP = level * 100;
             currentXP = Xpdiff;
         }
+        XP.xpAmount = currentXP;
     }
 
 }

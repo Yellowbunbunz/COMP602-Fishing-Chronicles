@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 
 public class XP : MonoBehaviour
-{  
+{
     public SliderScript slider;
     public Text levelText;
+    public static float xpAmount;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class XP : MonoBehaviour
     {
         dispylayLevel(StandardVars.vars.level);
 //        Debug.Log(vars.currentXP);
-        slider.SetSlider(StandardVars.vars.currentXP);
+        slider.SetSlider(xpAmount);
     }
 
     public void dispylayLevel(int level)
