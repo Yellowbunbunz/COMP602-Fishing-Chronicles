@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b3c207668bfe645a972104da67e82a, type: 3}
   m_Name: BigFish
   m_EditorClassIdentifier: 
-  ID: 0
   itemName: BigFish
-  value: 0
   icon: {fileID: 21300000, guid: 0f6ad1ce0313695409e3b320b622cfa6, type: 3}
+  itemDescription: + 25 Gold
   itemType: 1
   amount: 25

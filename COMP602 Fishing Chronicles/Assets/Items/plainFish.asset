@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b3c207668bfe645a972104da67e82a, type: 3}
   m_Name: PlainFish
   m_EditorClassIdentifier: 
-  ID: 0
   itemName: plainFish
-  value: 0
   icon: {fileID: 21300000, guid: 76c0d643a54e7424c87b3a5ed99e201b, type: 3}
+  itemDescription: + 15 Gold
   itemType: 0
   amount: 15
