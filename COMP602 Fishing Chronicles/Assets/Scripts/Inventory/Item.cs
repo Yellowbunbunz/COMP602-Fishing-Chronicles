@@ -10,11 +10,12 @@ public class Item : ScriptableObject
 
     public string itemName;
     public Sprite icon;
-    public string itemDescription = "Item info"; 
+    public string itemDescription = "Item info";
+    public float value;
 
     public virtual void Use()
     {
-        Debug.Log("Using: " + itemName);
+        DisplayCurrency.currencyAmount += value;
     }
 
     public virtual string GetItemDescription()
