@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class XP : MonoBehaviour
-{  
+{
     public SliderScript slider;
     public Text levelText;
+    public static float xpAmount;
 
     // Start is called before the first frame update
     void Start()
@@ -23,12 +21,11 @@ public class XP : MonoBehaviour
     void Update()
     {
         dispylayLevel(StandardVars.vars.level);
-//        Debug.Log(vars.currentXP);
-        slider.SetSlider(StandardVars.vars.currentXP);
+        slider.SetSlider(xpAmount);
     }
 
     public void dispylayLevel(int level)
     {
-        levelText.text = "Level: "+ level;
+        levelText.text = "Level: " + level;
     }
 }

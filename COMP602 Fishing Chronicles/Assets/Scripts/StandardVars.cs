@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class StandardVars
 {
     public static StandardVars vars = new StandardVars();
@@ -20,6 +16,7 @@ public class StandardVars
             MaxXP = level * 100;
             currentXP = Xpdiff;
         }
+        XP.xpAmount = currentXP;
     }
 
 }
