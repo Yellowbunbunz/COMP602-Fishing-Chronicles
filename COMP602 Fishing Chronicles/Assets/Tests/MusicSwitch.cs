@@ -18,11 +18,9 @@ public class MusicSwitch
 
         // Set an expected AudioClip for position 0.
         AudioClip expectedClip = Resources.Load<AudioClip>("villageMusic");
-        AudioClip unexpectedClip = null;
         gameMusic.audioClips[0] = expectedClip; // Assign the expected AudioClip to position 0.
-        gameMusic.audioClips[1] = unexpectedClip;//Assign the unexpected AudioClip to position 1.
 
         // Assert: Check if the song at position 0 matches the expected clip.
-        Assert.AreEqual(expectedClip, gameMusic.audioClips[1]);
+        Assert.AreEqual(expectedClip, gameMusic.audioClips[0]);
     }
 }
