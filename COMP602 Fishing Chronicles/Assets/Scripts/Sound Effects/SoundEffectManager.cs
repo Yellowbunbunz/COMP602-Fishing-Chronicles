@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class SoundEffect : MonoBehaviour
 {
-    //audio business
     public AudioSource audioSource;
-    public AudioClip sfxWalking;
+    public AudioClip soundEffect;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
         {
             //more audio business
-            audioSource.clip = sfxWalking;
+            audioSource.clip = soundEffect;
+            audioSource.loop = true;
             audioSource.Play();
         }
-
-
+        
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+        {
+            audioSource.loop = false;
+        }
     }
 }
