@@ -12,6 +12,10 @@ public class PlayerLocomotion : MonoBehaviour
     Transform cameraObject;
     Rigidbody playerRigidbody;
 
+    ////audio business
+    //public AudioSource audioSource;
+    //public AudioClip sfxWalking;
+
     [Header("Movement Flags")]
     public bool isSprinting;
     public bool isWalking;
@@ -59,6 +63,9 @@ public class PlayerLocomotion : MonoBehaviour
 
         if(isSprinting)
         {
+            ////more audio business
+            //audioSource.clip = sfxWalking;
+            //audioSource.Play();
             moveDirection = moveDirection * sprintingSpeed;
         }
         if (isWalking)
