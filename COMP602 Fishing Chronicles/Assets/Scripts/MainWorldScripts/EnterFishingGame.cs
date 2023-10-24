@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,13 +5,9 @@ public class EnterFishingGame : MonoBehaviour
 {
     bool fish = false;
 
-    private void Start()
-    {
-        Debug.Log(fish);
-    }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Player")
+        if (collision.collider.tag == "Dock")
         {
             fish = true;
         }
@@ -21,7 +15,7 @@ public class EnterFishingGame : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if(collision.collider.tag == "Player")
+        if (collision.collider.tag == "Dock")
         {
             fish = false;
         }
@@ -31,6 +25,7 @@ public class EnterFishingGame : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.F) && fish)
         {
+            this.gameObject.SetActive(false);
             SceneManager.LoadScene("FishingScene");//loads the scene
         }
     }
